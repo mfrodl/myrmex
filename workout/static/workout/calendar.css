@@ -1,0 +1,48 @@
+div#container {
+    display: table;
+    margin: auto;
+}
+
+table.month {
+    border: 1px solid #7b7b7b;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    float: center;
+    width: 100%;
+}
+
+table.month th, table.month td {
+    text-align: center;
+    border-radius: 5px;
+}
+
+table.month td.today {
+    background: #dddddd;
+    border-radius: 5px;
+}
+
+table.month td.highlighted {
+    background: #00aa00;
+}
+
+table.month th {
+    padding: 5px 15px;
+}
+
+table.month td a {
+    padding: 15px;
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+
+table.month td.highlighted a {
+    color: #ffffff;
+}
+
+table.month td:not(.noday) a:hover {
+    background: #ccffcc;
+    border-radius: 5px;
+    color: #000000;
+}

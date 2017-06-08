@@ -1,0 +1,12 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'workout/calendar.css' %}" />
+        <title>Workout for {{ month }} {{ year }}</title>
+    </head>
+    <body>
+        <div id="container">
+            {{ calendar|safe }}
+        </div>
+    </body>
+</html>
