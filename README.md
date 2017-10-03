@@ -1,5 +1,5 @@
 # Myrmex
-Interactive calendar for exercise tracking written in Django
+Interactive calendar for exercise tracking written in Django. [**Try it out!**](http://morning-brushlands-68412.herokuapp.com/exercise/)
 
 Disclaimer
 ----------
