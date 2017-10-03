@@ -1,5 +1,5 @@
 # Myrmex
-Interactive calendar for workout tracking written in Django
+Interactive calendar for exercise tracking written in Django
 
 Disclaimer
 ----------
@@ -62,7 +62,7 @@ It is highly recommended to set the root password for MariaDB now (it it empty b
 mysql_secure_installation
 ```
 
-Now that the MariaDB environment has been set up, you will need to create a database for storing your workout entries and a user that can access and manipulate the database. To do so, first log in to MariaDB's command-line client as `root` using the password you just generated:
+Now that the MariaDB environment has been set up, you will need to create a database for storing your exercise entries and a user that can access and manipulate the database. To do so, first log in to MariaDB's command-line client as `root` using the password you just generated:
 
 ```
 mysql -p
@@ -80,14 +80,14 @@ QUIT;
 For Myrmex to be able to access the database, we need to tell it which DBMS is used (MariaDB), where it resides (on local machine), what it is called (`myrmexdb`) and how to access it. In `/opt/myrmex/myrmex/settings.py`, edit the `DATABASES` variable as follows, replacing the credentials accordingly:
 
 ```python
-DATABASES = {                                                                   
-    'default': {                                                                
-        'ENGINE': 'django.db.backends.mysql',                                   
-        'NAME': 'myrmexdb',                                                     
-        'USER': 'myrmexuser',                                                   
-        'PASSWORD': 'myrmexpassword',          
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myrmexdb',
+        'USER': 'myrmexuser',
+        'PASSWORD': 'myrmexpassword',
         'HOST': 'localhost',
-    }                                                                           
+    }
 }
 ```
 
@@ -113,13 +113,13 @@ WSGIPythonPath /opt/myrmex
   </Files>
 </Directory>
 
-Alias /media/ /opt/myrmex/workout/media/
-<Directory /opt/myrmex/workout/media>
+Alias /media/ /opt/myrmex/exercise/media/
+<Directory /opt/myrmex/exercise/media>
   Require all granted
 </Directory>
 
-Alias /static/ /opt/myrmex/workout/static/
-<Directory /opt/myrmex/workout/static>
+Alias /static/ /opt/myrmex/exercise/static/
+<Directory /opt/myrmex/exercise/static>
   Require all granted
 </Directory>
 ```
@@ -140,4 +140,4 @@ systemctl enable httpd.service
 Test
 ----
 
-Go to http://localhost/workout and verify you can see this month's calendar.
+Go to http://localhost/exercise and verify you can see this month's calendar.

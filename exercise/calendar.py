@@ -5,10 +5,10 @@ from datetime import date
 
 from django.core.urlresolvers import reverse
 
-class WorkoutCalendar(HTMLCalendar):
-    def __init__(self, workout_dates):
+class Calendar(HTMLCalendar):
+    def __init__(self, dates=[]):
         super().__init__()
-        self.workout_dates = workout_dates
+        self.dates = dates
 
     def formatmonthname(self, theyear, themonth, withyear=True):
         this_month = date(theyear, themonth, 1)
@@ -38,11 +38,8 @@ class WorkoutCalendar(HTMLCalendar):
             prev_month_link, this_month_name, next_month_link)
 
     def month_link(self, text, year, month, style):
-        return '<a style="{0}" href="{1}">{2}</a>'.format(
-            style,
-            reverse('show', kwargs={'year': year, 'month': month}),
-            text,
-        )
+        link = '<a href="#" onclick="setMonth({0}, {1});" style="{2}">{3}</a>'
+        return link.format(year, month, style, text)
 
     def formatmonth(self, year, month):
         self.year, self.month = year, month
@@ -54,24 +51,18 @@ class WorkoutCalendar(HTMLCalendar):
             css_class = self.cssclasses[weekday]
             if date.today() == day_date:
                 css_class += ' today'
-            if day_date in self.workout_dates:
+            if day_date in self.dates:
                 css_class += ' highlighted'
             return self.day_cell(css_class, day_date)
         return self.no_day_cell()
 
     def day_cell(self, css_class, day_date):
-        link = '<a href="{0}">{1}</a>'.format(
-            reverse(
-                'toggle',
-                kwargs={
-                    'year': day_date.year,
-                    'month': day_date.month,
-                    'day': day_date.day,
-                },
-            ),
-            day_date.day,
+        link = '<a href="#" onclick="setDate(\'{0}\');">{1}</a>'.format(
+            day_date, day_date.day,
         )
-        cell = '<td class="{0}">{1}</td>'.format(css_class, link)
+        cell = '<td class="{0}" id="{1}">{2}</td>'.format(
+            css_class, day_date, link
+        )
         return cell
 
     def no_day_cell(self):

@@ -1,0 +1,210 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  background-color: #e3e3e3;
+}
+
+h4 {
+  color: #7ed321;
+}
+
+input {
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+input[type="submit"] {
+  color: #ffffff;
+  background-color: #64ac15;
+}
+
+input[type="submit"]:hover {
+  background-color: #7ed321;
+}
+
+input:focus {
+  outline: 0;
+  border-color: #64ac15;
+}
+
+input:focus + .input-icon i {
+  color: #7ed321;
+}
+
+input:focus + .input-icon:after {
+  border-right-color: #7ed321;
+}
+
+.input-group {
+  margin-bottom: 1em;
+}
+
+.input-group:before,
+.input-group:after {
+  content: "";
+  display: table;
+}
+
+.input-group:after {
+  clear: both;
+}
+
+.input-group-icon {
+  position: relative;
+}
+
+.input-group-icon input {
+  padding-left: 4.4em;
+}
+
+.input-group-icon .input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.4em;
+  height: 3.4em;
+  line-height: 3.4em;
+  text-align: center;
+  pointer-events: none;
+}
+
+.input-group-icon .input-icon:after {
+  position: absolute;
+  top: 0.6em;
+  bottom: 0.6em;
+  left: 3.4em;
+  display: block;
+  border-right: 1px solid #e5e5e5;
+  content: "";
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.input-group-icon .input-icon i {
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.container {
+  max-width: 480px;
+  padding: 1em 3em 2em 3em;
+  margin: 0em auto;
+  background-color: #fff;
+  border-radius: 4.2px;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+#calendar {
+  margin: auto;
+}
+
+#form {
+  display: table;
+  margin: auto;
+}
+
+#form-fields {
+  display: none;
+}
+
+.month {
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 5px;
+  float: center;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.month th, .month td {
+  border: solid 2px transparent;
+  text-align: center;
+  width: calc(100% / 7);
+  border-collapse: collapse;
+}
+
+.month td.today {
+  background: #e9e9e9;
+}
+
+.highlighted {
+  background: #7ed321;
+}
+
+.month th {
+  padding: 5px 15px;
+}
+
+.month td a {
+  padding: 10px;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+
+.month td:not(.noday):not(.selected):hover {
+  border-color: #dfffbc;
+}
+
+.month td:not(.noday) a:hover {
+  background: #dfffbc;
+}
+
+.month .selected {
+  border-color: #64ac15;
+}
+
+.month .selected a, .month .selected.highlighted a:hover {
+  color: #64ac15;
+  font-weight: bold;
+}
+
+.month .highlighted a {
+  color: #ffffff;
+}
+
+.month .highlighted a:hover {
+  color: #000000;
+}
+
+.icon {
+  width: 25px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.icon-jogging {
+  content: url(/static/exercise/jogging.svg);
+}
+
+.icon-yoga {
+  content: url(/static/exercise/yoga.svg);
+}
+
+.icon-weightlifting {
+  content: url(/static/exercise/weightlifting.svg);
+}

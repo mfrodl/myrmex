@@ -19,7 +19,7 @@ SECRET_KEY = 'gpj3wb=%%h_jm&^*knlmj%m=++^#v0p%vwfa8(-9e+&d++ig^9'
 # Application definition
 
 INSTALLED_APPS = [
-    'workout',
+    'exercise',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{% static 'exercise/style.css' %}">
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{% static 'exercise/calendar.js' %}"></script>
+
+    <title>Exercise for {{ month }} {{ year }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="{% url 'submit' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+          <h4>Pick a day:</h4>
+          <input type="hidden" id="date" name="date">
+          <div id="calendar"></div>
+        </div>
+        <div id="form-fields">
+          <h4>Fill in your exercises:</h4>
+          <div class="input-group input-group-icon">
+            <input type="number" min="0" name="jogging" id="jogging" placeholder="Jogging (km)">
+            <div class="input-icon"><i class="icon icon-jogging"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+            <input type="number" min="0" name="yoga" id="yoga" placeholder="Yoga (min)">
+            <div class="input-icon"><i class="icon icon-yoga"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+            <input type="number" min="0" name="weightlifting" id="weightlifting" placeholder="Weightlifting (kg)">
+            <div class="input-icon"><i class="icon icon-weightlifting"></i></div>
+          </div>
+          <div class="input-group">
+            <input type="submit" value="Save">
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
