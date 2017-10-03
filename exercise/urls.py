@@ -13,8 +13,6 @@ urlpatterns = [
     # HTML calendar for given month
     url(r'^calendar/(?P<year>[0-9]+)/(?P<month>[0-9]+)/$',
         views.calendar, name='calendar'),
-    url(r'^calendar/$',
-        views.calendar, name='calendar'),
 
     # Monthly exercise statistics
     url(r'^stats/(?P<year>[0-9]+)/(?P<month>[0-9]+)/$',

@@ -1,11 +1,8 @@
 var monthStats = [];
 
 $(function() {
-  $.get('/exercise/calendar/', function(data) {
-    $('#calendar').html(data);
-  });
-
-  // TODO: Call setMonth() to initialize monthStats
+  date = new Date();
+  setMonth(date.getFullYear(), date.getMonth() + 1);
 });
 
 /*

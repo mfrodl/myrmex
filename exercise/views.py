@@ -40,14 +40,9 @@ def show(request, year=None, month=None):
 
     return render(request, 'exercise/calendar.html', context)
 
-def calendar(request, year=None, month=None):
+def calendar(request, year, month):
     """ Render exercise calendar for given month in HTML """
-    # Use current year and month unless specified otherwise
-    if year is None or month is None:
-        today = date.today()
-        year, month = today.year, today.month
-    else:
-        year, month = int(year), int(month)
+    year, month = int(year), int(month)
 
     jogging = Jogging.objects.filter(date__year=year, date__month=month)
     yoga = Yoga.objects.filter(date__year=year, date__month=month)
